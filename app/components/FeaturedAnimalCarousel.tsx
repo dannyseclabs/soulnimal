@@ -131,35 +131,37 @@ export function FeaturedAnimalCarousel({
               key={`${animal.name}-${animalIndex}`}
               href={`/animals/${animal.slug}`}
               ref={animalIndex === 0 ? firstCardRef : undefined}
-              className="group min-w-[84%] overflow-hidden rounded-lg bg-cream shadow-lift ring-1 ring-forest/10 transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(43,39,31,0.16)] hover:ring-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/40 sm:min-w-[48%] lg:min-w-[31%] xl:min-w-[23.5%]"
+              className="group min-w-[84%] rounded-lg transition duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/40 sm:min-w-[48%] lg:min-w-[31%] xl:min-w-[23.5%]"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-linen">
-                <Image
-                  src={animal.image}
-                  alt={`${animal.name} preview`}
-                  fill
-                  sizes="(max-width: 640px) 84vw, (max-width: 1024px) 48vw, (max-width: 1280px) 31vw, 24vw"
-                  className="object-cover transition duration-500 group-hover:scale-[1.025] group-hover:brightness-105"
-                />
-              </div>
-              <div className="p-5">
-                <p className="inline-flex rounded-full bg-orange/10 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-forest/75">
-                  {animal.fit}
-                </p>
-                <h3 className="mt-2 font-display text-2xl font-extrabold sm:text-3xl">
-                  {animal.name}
-                </h3>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {animal.notes.map((note) => (
-                    <span
-                      key={note}
-                      className="rounded-full bg-olive/10 px-3 py-1.5 text-sm font-bold text-forest/75"
-                    >
-                      {note}
-                    </span>
-                  ))}
+              <article className="h-full overflow-hidden rounded-lg bg-cream shadow-lift ring-1 ring-forest/10 transition duration-300 group-hover:shadow-[0_24px_58px_rgba(43,39,31,0.16)] group-hover:ring-orange/30">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg bg-linen">
+                  <Image
+                    src={animal.image}
+                    alt={`${animal.name} preview`}
+                    fill
+                    sizes="(max-width: 640px) 84vw, (max-width: 1024px) 48vw, (max-width: 1280px) 31vw, 24vw"
+                    className="object-cover transition duration-500 group-hover:scale-[1.025] group-hover:brightness-105"
+                  />
                 </div>
-              </div>
+                <div className="p-5">
+                  <p className="inline-flex rounded-full bg-orange/10 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-forest/75">
+                    {animal.fit}
+                  </p>
+                  <h3 className="mt-2 font-display text-2xl font-extrabold sm:text-3xl">
+                    {animal.name}
+                  </h3>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {animal.notes.map((note) => (
+                      <span
+                        key={note}
+                        className="rounded-full bg-olive/10 px-3 py-1.5 text-sm font-bold text-forest/75"
+                      >
+                        {note}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
             </Link>
           ))}
         </div>
