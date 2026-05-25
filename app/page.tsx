@@ -123,15 +123,15 @@ function HeroSection() {
     <section className="relative min-h-[88dvh] overflow-hidden bg-forest text-cream">
       <div className="absolute inset-y-0 right-0 w-full lg:w-[58%]">
         <Image
-          src="/images/soulnimal-cat-linen-couch.jpg"
-          alt="A calm cat relaxing on a soft linen couch"
+          src="/images/soulnimal-hero-cat-dog-meadow.jpg"
+          alt="A calm dog and cat together in warm meadow light"
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 58vw"
-          className="object-cover object-[42%_50%]"
+          className="object-cover object-[50%_45%] lg:object-[50%_48%]"
         />
       </div>
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,61,5,1)_0%,rgba(23,61,5,0.98)_43%,rgba(23,61,5,0.72)_59%,rgba(23,61,5,0.12)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,61,5,1)_0%,rgba(23,61,5,0.96)_42%,rgba(23,61,5,0.58)_62%,rgba(23,61,5,0.06)_100%)]" />
 
       <div className="relative z-10 mx-auto flex min-h-[88dvh] max-w-7xl items-center px-5 py-32 sm:px-6 lg:px-8">
         <div className="max-w-[42rem]">
