@@ -45,7 +45,7 @@ export default function HomePage() {
 
 function Navbar() {
   return (
-    <header className="sticky inset-x-0 top-3 z-50 -mb-[4.75rem] px-4 sm:px-6 lg:px-8">
+    <header className="fixed inset-x-0 top-3 z-50 px-4 sm:px-6 lg:px-8">
       <nav
         aria-label="Main navigation"
         className="mx-auto flex max-w-7xl items-center justify-between rounded-full bg-ivory/90 px-4 py-3 text-forest shadow-[0_18px_50px_rgba(35,63,11,0.18)] ring-1 ring-forest/10 backdrop-blur-md sm:px-5"
