@@ -25,6 +25,7 @@ export type QuizQuestion = {
 };
 
 export type AnimalProfile = {
+  slug: string;
   name: string;
   fit: string;
   scores: TraitScores;
@@ -128,6 +129,7 @@ export const quizQuestions: QuizQuestion[] = [
 
 export const animalProfiles: AnimalProfile[] = [
   {
+    slug: "cat",
     name: "Cat",
     fit: "Independent, warm presence",
     scores: scores(2, 2, 3, 2, 2, 2, 3, 2),
@@ -135,6 +137,7 @@ export const animalProfiles: AnimalProfile[] = [
     challenges: { smell: "litter care needs consistency", interaction: "affection can be on their terms" }
   },
   {
+    slug: "dog",
     name: "Dog",
     fit: "Loyal daily companion",
     scores: scores(3, 1, 1, 3, 1, 3, 1, 1),
@@ -142,6 +145,7 @@ export const animalProfiles: AnimalProfile[] = [
     challenges: { budget: "vet, training, and care costs can rise", noise: "some dogs are vocal or reactive" }
   },
   {
+    slug: "rat",
     name: "Rat",
     fit: "Bright close companion",
     scores: scores(1, 1, 2, 3, 2, 3, 2, 2),
@@ -149,6 +153,7 @@ export const animalProfiles: AnimalProfile[] = [
     challenges: { smell: "cage hygiene matters a lot", budget: "specialist vet access can matter" }
   },
   {
+    slug: "rabbit",
     name: "Rabbit",
     fit: "Soft, quiet home energy",
     scores: scores(2, 2, 3, 2, 2, 2, 2, 2),
@@ -156,45 +161,11 @@ export const animalProfiles: AnimalProfile[] = [
     challenges: { beginner: "handling and diet need care", time: "daily cleaning and enrichment still matter" }
   },
   {
+    slug: "chinchilla",
     name: "Chinchilla",
     fit: "Delicate evening rhythm",
     scores: scores(2, 3, 2, 2, 2, 1, 1, 3),
     strengths: { smell: "naturally low odor with good setup", night: "fits evening-friendly homes", noise: "generally not loud" },
     challenges: { beginner: "temperature and handling needs are specific", interaction: "not usually a cuddly companion" }
-  },
-  {
-    name: "Ferret",
-    fit: "Curious, playful energy",
-    scores: scores(2, 1, 2, 3, 1, 3, 1, 2),
-    strengths: { interaction: "highly engaging and playful", time: "fits hands-on owners", space: "thrives with supervised exploration" },
-    challenges: { smell: "natural musky scent is real", beginner: "needs ferret-proofing and confident care" }
-  },
-  {
-    name: "Guinea pig",
-    fit: "Gentle social comfort",
-    scores: scores(2, 2, 2, 2, 2, 2, 3, 1),
-    strengths: { beginner: "often approachable for new owners", interaction: "social without being intense", noise: "soft sounds, not usually disruptive" },
-    challenges: { space: "needs a proper enclosure footprint", time: "fresh food and cleaning are daily work" }
-  },
-  {
-    name: "Budgie",
-    fit: "Bright, lively presence",
-    scores: scores(1, 3, 1, 2, 3, 2, 2, 1),
-    strengths: { budget: "can be more budget-friendly", space: "works in compact homes", interaction: "can become very engaging" },
-    challenges: { noise: "chirping can be frequent", time: "social birds need daily attention" }
-  },
-  {
-    name: "Hamster",
-    fit: "Small nocturnal observer",
-    scores: scores(1, 2, 2, 1, 3, 1, 2, 3),
-    strengths: { space: "compact setup compared with larger pets", budget: "usually modest ongoing costs", night: "fits nocturnal tolerance" },
-    challenges: { interaction: "not ideal for constant cuddling", night: "wheel and activity can happen late" }
-  },
-  {
-    name: "Leopard gecko",
-    fit: "Calm specialist companion",
-    scores: scores(1, 3, 3, 1, 2, 1, 2, 2),
-    strengths: { smell: "low odor with proper husbandry", noise: "very quiet", time: "care is structured and calm" },
-    challenges: { beginner: "heat, diet, and habitat setup must be right", interaction: "more observation than affection" }
   }
 ];

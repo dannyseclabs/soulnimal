@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { AnimalProfile, QuizQuestion, Trait, TraitScores } from "../../src/data/quiz";
 
@@ -105,7 +106,11 @@ function Results({
 
       <div className="mt-8 grid gap-4">
         {results.slice(0, 3).map((result, index) => (
-          <article key={result.name} className="rounded-lg bg-cream p-5 shadow-lift ring-1 ring-forest/10 sm:p-6">
+          <Link
+            key={result.name}
+            href={`/animals/${result.slug}`}
+            className="block rounded-lg bg-cream p-5 shadow-lift ring-1 ring-forest/10 transition hover:-translate-y-0.5 hover:ring-orange/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/40 sm:p-6"
+          >
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-extrabold uppercase tracking-[0.14em] text-forest/55">
@@ -123,7 +128,7 @@ function Results({
               <p className="text-sm font-extrabold text-forest">Possible challenge</p>
               <p className="mt-1 leading-7 text-forest/68">{result.challenge}</p>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
 
