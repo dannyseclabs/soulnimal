@@ -16,22 +16,29 @@ const featuredAnimals = [
     name: "Quiet cat",
     fit: "Independent companion",
     image:
-      "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=82",
-    notes: ["Apartment friendly", "Gentle routine", "Lower daily noise"]
+      "/images/soulnimal-cat-linen-couch.jpg",
+    notes: ["Soft routine", "Warm home energy", "Low-pressure bond"]
   },
   {
-    name: "Small dog",
-    fit: "Social rhythm keeper",
+    name: "Pet rat",
+    fit: "Curious close companion",
     image:
-      "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=900&q=82",
-    notes: ["High connection", "Outdoor structure", "Training matters"]
+      "/images/soulnimal-rat-blanket.jpg",
+    notes: ["Social and bright", "Small-space friendly", "Needs enrichment"]
   },
   {
     name: "House rabbit",
     fit: "Calm, delicate presence",
     image:
-      "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=900&q=82",
+      "/images/soulnimal-rabbit-window.jpg",
     notes: ["Quiet home", "Careful handling", "Space to roam"]
+  },
+  {
+    name: "Chinchilla",
+    fit: "Gentle evening rhythm",
+    image:
+      "/images/soulnimal-chinchilla-wood.jpg",
+    notes: ["Cool dry space", "Soft interaction", "Night energy"]
   }
 ];
 
@@ -115,12 +122,12 @@ function HeroSection() {
   return (
     <section className="relative min-h-[86dvh] overflow-hidden bg-forest text-cream">
       <Image
-        src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1800&q=85"
-        alt="Two calm dogs standing together outdoors in warm light"
+        src="https://images.unsplash.com/photo-1760214694964-d9e1b4d7feae?auto=format&fit=crop&w=1800&q=88"
+        alt="Cats resting indoors in warm amber light"
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(35,63,11,0.94)_0%,rgba(35,63,11,0.74)_44%,rgba(35,63,11,0.22)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-cream via-cream/46 to-transparent" />
@@ -223,7 +230,7 @@ function FeaturedAnimalsSection() {
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {featuredAnimals.map((animal) => (
             <article
               key={animal.name}
