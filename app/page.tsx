@@ -121,23 +121,25 @@ function Navbar() {
 function HeroSection() {
   return (
     <section className="relative min-h-[88dvh] overflow-hidden bg-forest text-cream">
-      <Image
-        src="https://images.unsplash.com/photo-1659627486747-cd6d95bca782?auto=format&fit=crop&w=1800&q=88"
-        alt="An orange cat sleeping on a quiet couch in warm window light"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[58%_54%] sm:object-[64%_54%] lg:object-[70%_54%]"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,61,5,0.96)_0%,rgba(23,61,5,0.9)_38%,rgba(23,61,5,0.42)_68%,rgba(23,61,5,0.08)_100%)]" />
+      <div className="absolute inset-y-0 right-0 w-full lg:w-[58%]">
+        <Image
+          src="/images/soulnimal-cat-linen-couch.jpg"
+          alt="A calm cat relaxing on a soft linen couch"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 58vw"
+          className="object-cover object-[42%_50%]"
+        />
+      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,61,5,1)_0%,rgba(23,61,5,0.98)_43%,rgba(23,61,5,0.72)_59%,rgba(23,61,5,0.12)_100%)]" />
 
       <div className="relative z-10 mx-auto flex min-h-[88dvh] max-w-7xl items-center px-5 py-32 sm:px-6 lg:px-8">
-        <div className="max-w-[44rem]">
+        <div className="max-w-[42rem]">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-cream/10 px-3 py-2 text-sm font-bold text-cream/88 ring-1 ring-cream/18">
             <Leaf className="size-4 text-amber" aria-hidden="true" />
             Calm animal matching for real homes
           </div>
-          <h1 className="max-w-[42rem] font-display text-5xl font-extrabold leading-[0.98] text-balance sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-[40rem] font-display text-5xl font-extrabold leading-[0.98] text-balance sm:text-6xl lg:text-7xl">
             Find an animal that feels right and fits real life.
           </h1>
           <p className="mt-7 max-w-[38rem] text-lg leading-8 text-cream/78 sm:text-xl">
