@@ -14,7 +14,17 @@ export const metadata: Metadata = {
     template: "%s | Soulnimal"
   },
   description:
-    "A warm, realistic animal discovery platform for finding companions that fit your real life."
+    "A warm, realistic animal discovery platform for finding companions that fit your real life.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" }
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }]
+  },
+  manifest: "/manifest.webmanifest"
 };
 
 export const viewport: Viewport = {
