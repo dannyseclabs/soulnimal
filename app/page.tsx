@@ -10,55 +10,17 @@ import {
   PawPrint,
   ShieldCheck
 } from "lucide-react";
+import {
+  featuredAnimals,
+  ownershipChecks,
+  quizPreviewLabels
+} from "../src/data/home";
 
-const featuredAnimals = [
-  {
-    name: "Quiet cat",
-    fit: "Independent companion",
-    image:
-      "/images/soulnimal-cat-linen-couch.jpg",
-    notes: ["Soft routine", "Warm home energy", "Low-pressure bond"]
-  },
-  {
-    name: "Pet rat",
-    fit: "Curious close companion",
-    image:
-      "/images/soulnimal-rat-blanket.jpg",
-    notes: ["Social and bright", "Small-space friendly", "Needs enrichment"]
-  },
-  {
-    name: "House rabbit",
-    fit: "Calm, delicate presence",
-    image:
-      "/images/soulnimal-rabbit-window.jpg",
-    notes: ["Quiet home", "Careful handling", "Space to roam"]
-  },
-  {
-    name: "Chinchilla",
-    fit: "Gentle evening rhythm",
-    image:
-      "/images/soulnimal-chinchilla-wood.jpg",
-    notes: ["Cool dry space", "Soft interaction", "Night energy"]
-  }
-];
-
-const ownershipChecks = [
-  {
-    icon: Clock3,
-    title: "Time has texture",
-    text: "A good match considers weekday energy, cleaning rhythms, travel, and the repeated care that shapes daily life."
-  },
-  {
-    icon: Home,
-    title: "Your space is part of the bond",
-    text: "Noise, scent, floor type, sunlight, neighbors, and retreat areas can matter as much as personality."
-  },
-  {
-    icon: CircleDollarSign,
-    title: "Costs should feel honest",
-    text: "Food is only one part. Grooming, enrichment, insurance, vet care, and emergencies belong in the decision."
-  }
-];
+const ownershipIcons = {
+  clock: Clock3,
+  home: Home,
+  cost: CircleDollarSign
+};
 
 export default function HomePage() {
   return (
@@ -82,7 +44,7 @@ export default function HomePage() {
 
 function Navbar() {
   return (
-    <header className="absolute inset-x-0 top-0 z-20 px-4 pt-4 sm:px-6 lg:px-8">
+    <header className="sticky inset-x-0 top-3 z-50 -mb-[4.75rem] px-4 sm:px-6 lg:px-8">
       <nav
         aria-label="Main navigation"
         className="mx-auto flex max-w-7xl items-center justify-between rounded-full bg-ivory/90 px-4 py-3 text-forest shadow-[0_18px_50px_rgba(35,63,11,0.18)] ring-1 ring-forest/10 backdrop-blur-md sm:px-5"
@@ -183,7 +145,7 @@ function QuizCtaSection() {
 
         <div className="rounded-lg bg-ivory p-5 shadow-soft ring-1 ring-forest/10 sm:p-7">
           <div className="grid gap-4 sm:grid-cols-3">
-            {["Lifestyle", "Sensory fit", "Budget"].map((label) => (
+            {quizPreviewLabels.map((label) => (
               <div key={label} className="rounded-lg bg-cream/70 p-4">
                 <Check className="mb-5 size-5 text-olive" aria-hidden="true" />
                 <p className="text-sm font-extrabold text-forest">{label}</p>
@@ -293,17 +255,26 @@ function OwnershipAwarenessSection() {
 
         <div className="grid gap-4">
           {ownershipChecks.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-lg bg-cream/[0.08] p-5 shadow-[0_18px_44px_rgba(0,0,0,0.08)] ring-1 ring-cream/10 backdrop-blur sm:p-6"
-            >
-              <item.icon className="size-6 text-amber" aria-hidden="true" />
-              <h3 className="mt-4 text-xl font-extrabold">{item.title}</h3>
-              <p className="mt-3 leading-7 text-cream/70">{item.text}</p>
-            </article>
+            <OwnershipCheckCard key={item.title} item={item} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function OwnershipCheckCard({
+  item
+}: {
+  item: (typeof ownershipChecks)[number];
+}) {
+  const Icon = ownershipIcons[item.icon];
+
+  return (
+    <article className="rounded-lg bg-cream/[0.08] p-5 shadow-[0_18px_44px_rgba(0,0,0,0.08)] ring-1 ring-cream/10 backdrop-blur sm:p-6">
+      <Icon className="size-6 text-amber" aria-hidden="true" />
+      <h3 className="mt-4 text-xl font-extrabold">{item.title}</h3>
+      <p className="mt-3 leading-7 text-cream/70">{item.text}</p>
+    </article>
   );
 }
