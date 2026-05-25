@@ -1,4 +1,12 @@
-export type AnimalSlug = "rabbit" | "cat" | "rat" | "chinchilla" | "dog";
+export type AnimalSlug =
+  | "rabbit"
+  | "cat"
+  | "rat"
+  | "chinchilla"
+  | "dog"
+  | "ferret"
+  | "guinea-pig"
+  | "budgie";
 
 export type AnimalDetail = {
   slug: AnimalSlug;
@@ -181,6 +189,96 @@ export const animals: AnimalDetail[] = [
     bestFor: ["People with daily time", "Active or routine-driven homes", "Owners ready for training"],
     notFor: ["Very unpredictable schedules", "Noise-sensitive housing without planning", "People wanting low-maintenance care"],
     similar: ["cat", "rat", "rabbit"]
+  },
+  {
+    slug: "ferret",
+    name: "Ferret",
+    image: "/images/soulnimal-ferret.jpg",
+    tagline: "Curious, playful energy for hands-on homes",
+    summary: "Ferrets are clever, funny, and intense in small bursts. They suit people who want interaction and can manage scent, supervision, and safe exploration.",
+    traits: ["Playful", "Clever", "Supervised freedom"],
+    facts: {
+      lifespan: "6-10 years",
+      beginner: "Special care",
+      smell: "Noticeable",
+      noise: "Low to moderate",
+      intelligence: "High",
+      social: "High",
+      monthlyCost: "$60-$180",
+      activity: "Very playful"
+    },
+    livingWith: "Living with a ferret feels lively and tactile. They nap deeply, then wake with a strong need to explore, interact, and test every weak point in a room.",
+    care: {
+      housing: "Secure cage for rest plus ferret-proofed play space, washable bedding, tunnels, and supervised out-of-cage time.",
+      diet: "High-protein ferret food or carefully planned carnivore diet with fresh water and limited treats.",
+      dailyTime: "About 1-2 hours for cleaning, feeding, supervision, and enrichment."
+    },
+    pros: ["Highly interactive", "Big personality", "Fun for enrichment-focused owners"],
+    cons: ["Musky scent", "Needs careful ferret-proofing", "Can be expensive medically"],
+    commonMistakes: ["Letting them roam unsupervised", "Underestimating scent", "Using unsafe rubber toys"],
+    bestFor: ["Hands-on adults", "People who enjoy playful routines", "Homes that can supervise exploration"],
+    notFor: ["Very scent-sensitive homes", "Owners wanting low-maintenance care", "Unsecured rooms"],
+    similar: ["rat", "cat", "dog"]
+  },
+  {
+    slug: "guinea-pig",
+    name: "Guinea pig",
+    image: "/images/soulnimal-guinea-pig.jpg",
+    tagline: "Gentle social comfort with soft daily rituals",
+    summary: "Guinea pigs are sweet, social, and routine-loving. They are approachable, but they still need proper space, companionship, fresh food, and steady cleaning.",
+    traits: ["Gentle", "Social", "Routine-friendly"],
+    facts: {
+      lifespan: "5-8 years",
+      beginner: "Friendly",
+      smell: "Moderate with bedding",
+      noise: "Soft chatter",
+      intelligence: "Moderate",
+      social: "Needs companions",
+      monthlyCost: "$45-$130",
+      activity: "Calm daily movement"
+    },
+    livingWith: "Guinea pigs bring a gentle, grounded rhythm to a home. They are not demanding like a dog, but their trust grows through predictable feeding, cleaning, and soft handling.",
+    care: {
+      housing: "Large flat enclosure with hideouts, soft bedding, hay access, and room for at least a bonded pair.",
+      diet: "Unlimited hay, vitamin C-rich vegetables, measured pellets, and fresh water.",
+      dailyTime: "About 45-75 minutes for feeding, spot cleaning, observation, and gentle social time."
+    },
+    pros: ["Gentle temperament", "Good for calm homes", "Clear daily routine"],
+    cons: ["Needs more space than expected", "Daily fresh food required", "Bedding odor if neglected"],
+    commonMistakes: ["Buying a cage that is too small", "Keeping one alone", "Forgetting vitamin C needs"],
+    bestFor: ["Quiet households", "People who like routine care", "Owners wanting soft social presence"],
+    notFor: ["Tiny spaces", "People avoiding daily cleaning", "Homes expecting a cuddly toy"],
+    similar: ["rabbit", "chinchilla", "rat"]
+  },
+  {
+    slug: "budgie",
+    name: "Budgie",
+    image: "/images/soulnimal-budgie.jpg",
+    tagline: "Bright companionship for homes that welcome sound",
+    summary: "Budgies are small, intelligent birds with lively presence. They can be deeply engaging, but their social needs and vocal rhythm should be understood before bringing one home.",
+    traits: ["Bright", "Vocal", "Social"],
+    facts: {
+      lifespan: "7-12 years",
+      beginner: "Moderate",
+      smell: "Low",
+      noise: "Moderate",
+      intelligence: "High",
+      social: "High",
+      monthlyCost: "$25-$90",
+      activity: "Light and active"
+    },
+    livingWith: "A budgie adds movement and sound to the room. The relationship can feel surprisingly personal when trust is built slowly through daily presence and gentle training.",
+    care: {
+      housing: "Wide flight-friendly cage, safe perches, enrichment, out-of-cage time in a bird-safe room, and clean air.",
+      diet: "Quality pellets, vegetables, limited seed, fresh water, and safe foraging options.",
+      dailyTime: "About 45-90 minutes for feeding, cleaning, social contact, and supervised flight or training."
+    },
+    pros: ["Low odor", "Small-space friendly", "Intelligent and engaging"],
+    cons: ["Chirping can be frequent", "Needs daily social time", "Air quality and hazards matter"],
+    commonMistakes: ["Seed-only diet", "Tiny decorative cages", "Keeping them isolated without attention"],
+    bestFor: ["People who enjoy gentle sound", "Compact homes", "Owners interested in training"],
+    notFor: ["Silent homes", "Homes with unsafe fumes", "People wanting hands-off decor"],
+    similar: ["chinchilla", "rat", "cat"]
   }
 ];
 

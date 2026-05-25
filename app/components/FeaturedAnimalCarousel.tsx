@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { featuredAnimals } from "../../src/data/home";
@@ -19,7 +20,7 @@ export function FeaturedAnimalCarousel({
   const [isAnimating, setIsAnimating] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const viewportRef = useRef<HTMLDivElement>(null);
-  const firstCardRef = useRef<HTMLElement>(null);
+  const firstCardRef = useRef<HTMLAnchorElement>(null);
   const transitionTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -126,18 +127,19 @@ export function FeaturedAnimalCarousel({
           style={{ transform: `translateX(-${index * step}px)` }}
         >
           {slides.map((animal, animalIndex) => (
-            <article
+            <Link
               key={`${animal.name}-${animalIndex}`}
+              href={`/animals/${animal.slug}`}
               ref={animalIndex === 0 ? firstCardRef : undefined}
-              className="min-w-[84%] overflow-hidden rounded-lg bg-cream shadow-lift ring-1 ring-forest/10 sm:min-w-[48%] lg:min-w-[31%] xl:min-w-[23.5%]"
+              className="group min-w-[84%] overflow-hidden rounded-lg bg-cream shadow-lift ring-1 ring-forest/10 transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(43,39,31,0.16)] hover:ring-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/40 sm:min-w-[48%] lg:min-w-[31%] xl:min-w-[23.5%]"
             >
-              <div className="relative aspect-[4/3] bg-linen">
+              <div className="relative aspect-[4/3] overflow-hidden bg-linen">
                 <Image
                   src={animal.image}
                   alt={`${animal.name} preview`}
                   fill
                   sizes="(max-width: 640px) 84vw, (max-width: 1024px) 48vw, (max-width: 1280px) 31vw, 24vw"
-                  className="object-cover"
+                  className="object-cover transition duration-500 group-hover:scale-[1.025] group-hover:brightness-105"
                 />
               </div>
               <div className="p-5">
@@ -158,7 +160,7 @@ export function FeaturedAnimalCarousel({
                   ))}
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

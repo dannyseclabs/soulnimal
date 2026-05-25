@@ -2,48 +2,56 @@ export const quizPreviewLabels = ["Lifestyle", "Sensory fit", "Budget"] as const
 
 export const featuredAnimals = [
   {
+    slug: "cat",
     name: "Quiet cat",
     fit: "Independent companion",
     image: "/images/soulnimal-cat-linen-couch.jpg",
     notes: ["Soft routine", "Warm home energy", "Low-pressure bond"]
   },
   {
+    slug: "rat",
     name: "Pet rat",
     fit: "Curious close companion",
     image: "/images/soulnimal-rat-blanket.jpg",
     notes: ["Social and bright", "Small-space friendly", "Needs enrichment"]
   },
   {
+    slug: "rabbit",
     name: "House rabbit",
     fit: "Calm, delicate presence",
     image: "/images/soulnimal-rabbit-window.jpg",
     notes: ["Quiet home", "Careful handling", "Space to roam"]
   },
   {
+    slug: "chinchilla",
     name: "Chinchilla",
     fit: "Gentle evening rhythm",
     image: "/images/soulnimal-chinchilla-wood.jpg",
     notes: ["Cool dry space", "Soft interaction", "Night energy"]
   },
   {
+    slug: "dog",
     name: "Small dog",
     fit: "Loyal daily rhythm",
     image: "/images/soulnimal-small-dog.jpg",
     notes: ["Walk routine", "Close bond", "Social home"]
   },
   {
+    slug: "ferret",
     name: "Ferret",
     fit: "Playful clever energy",
     image: "/images/soulnimal-ferret.jpg",
     notes: ["Curious mind", "Supervised play", "Soft mischief"]
   },
   {
+    slug: "guinea-pig",
     name: "Guinea pig",
     fit: "Gentle social comfort",
     image: "/images/soulnimal-guinea-pig.jpg",
     notes: ["Pair-friendly", "Quiet care", "Fresh greens"]
   },
   {
+    slug: "budgie",
     name: "Budgie",
     fit: "Bright gentle presence",
     image: "/images/soulnimal-budgie.jpg",
