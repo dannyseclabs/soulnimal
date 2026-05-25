@@ -120,29 +120,27 @@ function Navbar() {
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[86dvh] overflow-hidden bg-forest text-cream">
+    <section className="relative min-h-[88dvh] overflow-hidden bg-forest text-cream">
       <Image
-        src="https://images.unsplash.com/photo-1760214694964-d9e1b4d7feae?auto=format&fit=crop&w=1800&q=88"
-        alt="Cats resting indoors in warm amber light"
+        src="https://images.unsplash.com/photo-1659627486747-cd6d95bca782?auto=format&fit=crop&w=1800&q=88"
+        alt="An orange cat sleeping on a quiet couch in warm window light"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-[58%_54%] sm:object-[64%_54%] lg:object-[70%_54%]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(35,63,11,0.94)_0%,rgba(35,63,11,0.74)_44%,rgba(35,63,11,0.22)_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-cream via-cream/46 to-transparent" />
-      <div className="absolute right-0 top-24 hidden h-[58%] w-24 bg-[repeating-linear-gradient(135deg,rgba(217,161,91,0.3)_0_2px,transparent_2px_18px)] opacity-70 md:block" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,61,5,0.96)_0%,rgba(23,61,5,0.9)_38%,rgba(23,61,5,0.42)_68%,rgba(23,61,5,0.08)_100%)]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[86dvh] max-w-7xl items-end px-5 pb-16 pt-32 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-cream/15 px-3 py-2 text-sm font-bold text-cream/90 shadow-sm ring-1 ring-cream/20 backdrop-blur-md">
+      <div className="relative z-10 mx-auto flex min-h-[88dvh] max-w-7xl items-center px-5 py-32 sm:px-6 lg:px-8">
+        <div className="max-w-[44rem]">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-cream/10 px-3 py-2 text-sm font-bold text-cream/88 ring-1 ring-cream/18">
             <Leaf className="size-4 text-amber" aria-hidden="true" />
             Calm animal matching for real homes
           </div>
-          <h1 className="max-w-3xl font-display text-5xl font-extrabold leading-[0.98] text-balance sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-[42rem] font-display text-5xl font-extrabold leading-[0.98] text-balance sm:text-6xl lg:text-7xl">
             Find an animal that feels right and fits real life.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-cream/80 sm:text-xl">
+          <p className="mt-7 max-w-[38rem] text-lg leading-8 text-cream/78 sm:text-xl">
             Soulnimal helps you weigh personality, care rhythm, space, budget,
             sound sensitivity, and emotional expectations before you fall in
             love with a companion.
@@ -157,7 +155,7 @@ function HeroSection() {
             </Link>
             <Link
               href="/animals"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-cream/10 px-6 text-base font-extrabold text-cream ring-1 ring-cream/30 backdrop-blur-md transition hover:bg-cream/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber/60"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-cream/8 px-6 text-base font-extrabold text-cream ring-1 ring-cream/24 transition hover:bg-cream/14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber/60"
             >
               Browse animals
             </Link>
