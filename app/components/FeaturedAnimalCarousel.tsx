@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { featuredAnimals } from "../../src/data/home";
 
 type FeaturedAnimal = (typeof featuredAnimals)[number];
@@ -17,8 +17,10 @@ export function FeaturedAnimalCarousel({
   const [index, setIndex] = useState(cloneCount);
   const [step, setStep] = useState(0);
   const [isAnimating, setIsAnimating] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const viewportRef = useRef<HTMLDivElement>(null);
   const firstCardRef = useRef<HTMLElement>(null);
+  const transitionTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const measure = () => {
@@ -41,26 +43,51 @@ export function FeaturedAnimalCarousel({
     return () => window.removeEventListener("resize", measure);
   }, [animals.length]);
 
+  const clearTransitionTimeout = () => {
+    if (transitionTimeoutRef.current) {
+      clearTimeout(transitionTimeoutRef.current);
+      transitionTimeoutRef.current = null;
+    }
+  };
+
+  const finishTransition = useCallback(() => {
+    clearTransitionTimeout();
+    setIsTransitioning(false);
+    setIndex((current) => {
+      if (current >= cloneCount * 2) {
+        setIsAnimating(false);
+        return current - cloneCount;
+      }
+
+      if (current < cloneCount) {
+        setIsAnimating(false);
+        return current + cloneCount;
+      }
+
+      return current;
+    });
+  }, [cloneCount]);
+
   const previous = () => {
+    if (isTransitioning) {
+      return;
+    }
+
+    setIsTransitioning(true);
     setIsAnimating(true);
     setIndex((current) => current - 1);
+    transitionTimeoutRef.current = setTimeout(finishTransition, 700);
   };
 
   const next = () => {
+    if (isTransitioning) {
+      return;
+    }
+
+    setIsTransitioning(true);
     setIsAnimating(true);
     setIndex((current) => current + 1);
-  };
-
-  const handleTransitionEnd = () => {
-    if (index >= cloneCount * 2) {
-      setIsAnimating(false);
-      setIndex(index - cloneCount);
-    }
-
-    if (index < cloneCount) {
-      setIsAnimating(false);
-      setIndex(index + cloneCount);
-    }
+    transitionTimeoutRef.current = setTimeout(finishTransition, 700);
   };
 
   useEffect(() => {
@@ -68,6 +95,8 @@ export function FeaturedAnimalCarousel({
       requestAnimationFrame(() => setIsAnimating(true));
     }
   }, [isAnimating]);
+
+  useEffect(() => clearTransitionTimeout, []);
 
   return (
     <div className="mt-10">
@@ -93,7 +122,7 @@ export function FeaturedAnimalCarousel({
       <div ref={viewportRef} className="overflow-hidden">
         <div
           className={`flex gap-5 ${isAnimating ? "transition-transform duration-500 ease-out" : ""}`}
-          onTransitionEnd={handleTransitionEnd}
+          onTransitionEnd={finishTransition}
           style={{ transform: `translateX(-${index * step}px)` }}
         >
           {slides.map((animal, animalIndex) => (
