@@ -120,7 +120,7 @@ export function FeaturedAnimalCarousel({
         </button>
       </div>
 
-      <div ref={viewportRef} className="-mt-3 overflow-hidden pt-3 pb-5">
+      <div ref={viewportRef} className="-mt-6 overflow-hidden pt-6 pb-5">
         <div
           className={`flex gap-5 ${isAnimating ? "transition-transform duration-500 ease-out" : ""}`}
           onTransitionEnd={finishTransition}
