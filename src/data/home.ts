@@ -24,6 +24,30 @@ export const featuredAnimals = [
     fit: "Gentle evening rhythm",
     image: "/images/soulnimal-chinchilla-wood.jpg",
     notes: ["Cool dry space", "Soft interaction", "Night energy"]
+  },
+  {
+    name: "Small dog",
+    fit: "Loyal daily rhythm",
+    image: "/images/soulnimal-small-dog.jpg",
+    notes: ["Walk routine", "Close bond", "Social home"]
+  },
+  {
+    name: "Ferret",
+    fit: "Playful clever energy",
+    image: "/images/soulnimal-ferret.jpg",
+    notes: ["Curious mind", "Supervised play", "Soft mischief"]
+  },
+  {
+    name: "Guinea pig",
+    fit: "Gentle social comfort",
+    image: "/images/soulnimal-guinea-pig.jpg",
+    notes: ["Pair-friendly", "Quiet care", "Fresh greens"]
+  },
+  {
+    name: "Budgie",
+    fit: "Bright gentle presence",
+    image: "/images/soulnimal-budgie.jpg",
+    notes: ["Light chatter", "Daily attention", "Airy space"]
   }
 ] as const;
 

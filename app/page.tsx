@@ -15,6 +15,7 @@ import {
   ownershipChecks,
   quizPreviewLabels
 } from "../src/data/home";
+import { FeaturedAnimalCarousel } from "./components/FeaturedAnimalCarousel";
 
 const ownershipIcons = {
   clock: Clock3,
@@ -192,42 +193,7 @@ function FeaturedAnimalsSection() {
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {featuredAnimals.map((animal) => (
-            <article
-              key={animal.name}
-              className="overflow-hidden rounded-lg bg-cream shadow-lift ring-1 ring-forest/10"
-            >
-              <div className="relative aspect-[4/3] bg-linen">
-                <Image
-                  src={animal.image}
-                  alt={`${animal.name} preview`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-5">
-                <p className="inline-flex rounded-full bg-orange/10 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-forest/75">
-                  {animal.fit}
-                </p>
-                <h3 className="mt-2 font-display text-2xl font-extrabold sm:text-3xl">
-                  {animal.name}
-                </h3>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {animal.notes.map((note) => (
-                    <span
-                      key={note}
-                      className="rounded-full bg-olive/10 px-3 py-1.5 text-sm font-bold text-forest/75"
-                    >
-                      {note}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+        <FeaturedAnimalCarousel animals={featuredAnimals} />
       </div>
     </section>
   );
